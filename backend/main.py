@@ -15,8 +15,7 @@ APP_ID = 252490
 input_cur="ru"
 
 def get_regional_prices(appid,cur):
-    print(f"=== Сбор региональных цен для AppID: {appid} ===")
-    # Формируем URL с параметром конкретной страны (cc)
+    print(f"Сбор региональных цен для AppID: {appid} ===")
     url = f"https://store.steampowered.com/api/appdetails?appids={appid}&cc={cur}"
     characteristics = ("name", "price_overview", "about_the_game", "supported_languages", "website",
                            "pc_requirements")
@@ -35,8 +34,6 @@ def get_regional_prices(appid,cur):
 
     except Exception as e:
         return(f"error {cur}: {e}")
-        # Небольшая пауза, чтобы Steam не заблокировал за частые запросы
-
 
 @app.get("/api/games")
 
