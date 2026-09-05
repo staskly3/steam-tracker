@@ -9,7 +9,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Разрешить всем
     allow_methods=["*"],
-    allow_headers=["*"],
+    allow_headers=["*"], # стас соси яйца волосатые бальшие прям сука уххх
 )#grigoriy
 APP_ID = 252490
 input_cur="ru"
