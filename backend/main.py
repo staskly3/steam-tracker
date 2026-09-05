@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 # Разрешаем фронтенду обращаться к бэкенду (CORS)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"])
-print(1234)
+#grigoriy
 APP_ID = 252490
 input_cur="ru"
 
