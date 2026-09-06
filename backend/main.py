@@ -32,8 +32,7 @@ def get_regional_prices(appid,cur):
                 'discount_percent': game_data.get('price_overview', {}).get('discount_percent'),
                 "about_the_game": "info"#game_data.get("about_the_game"),  # Твой плейсхолдер
             }
-            # for i in game_info.items():
-            #     print(i)
+
             return (game_info)
 
     except Exception as e:
@@ -41,5 +40,5 @@ def get_regional_prices(appid,cur):
 
 @app.get("/api/games")
 
-def get_games(country: str = None):
-    return (get_regional_prices(APP_ID,country))
+def get_games(country: str = None):#appid: str = None,
+    return (get_regional_prices(APP_ID,str(country)))
