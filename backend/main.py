@@ -25,20 +25,17 @@ def get_regional_prices(appid,cur):
         if data and data[str(appid)]['success']:
             x=""
             j=0
-            about_the_game = data[str(appid)]['data']["about_the_game"]
-
-
+            game_data = data[str(appid)]['data']
             game_info = {
-                "name": data[str(appid)]['data']['name'],
-                "price": data[str(appid)]['data']["price_overview"].get('final_formatted'),
-                "currency": data[str(appid)]['data']["price_overview"].get('currency'),
-                'discount_percent': data[str(appid)]['data']["price_overview"].get('discount_percent'),
-                "about_the_game":"asd" ,
+                "name": game_data.get('name'),
+                "price": game_data.get('price_overview', {}).get('final_formatted'),
+                "currency": game_data.get('price_overview', {}).get('currency'),
+                'discount_percent': game_data.get('price_overview', {}).get('discount_percent'),
+                "about_the_game": game_data.get("about_the_game"),  # Твой плейсхолдер
             }
-            for i in game_info.items():
-                print(i)
-            quit()
-            # return (game_info)
+            # for i in game_info.items():
+            #     print(i)
+            return (game_info)
 
     except Exception as e:
         return(f"error {cur}: {e}")
@@ -46,5 +43,4 @@ def get_regional_prices(appid,cur):
 @app.get("/api/games")
 
 def get_games():
-    return json.dumps(get_regional_prices(APP_ID,input_cur))
-get_games()
+    return (get_regional_prices(APP_ID,input_cur))
