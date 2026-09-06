@@ -105,18 +105,21 @@ body {
     -webkit-appearance: none;
     -moz-appearance: none;
     background-color: blueviolet;
-    color: darkorchid;
+    color: white;
     border-radius: 10px;
-    border: 1.5px solid #c084fc;
+    border: 1.5px solid #0f0912;
     outline: none;
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>');
+    font-family: Times New Roman;
     background-repeat: no-repeat;
     background-position: right 12px center;
     transition: all 0.3s ease-out;
+    width: 250px;
+    height: 50px;
+    font-size: 30px;
 }
 #region-select:hover{
     border-color:#d8b4fe;
-    box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8)
 }
 #region-select:focus {
     border-color: #c084fc;
@@ -127,4 +130,30 @@ body {
     color: #ffffff;
     padding: 10px;
 }
+.selectButtons{
+display: flex;
+    align-content: center;
+    gap: 20px
+}
+#claimBtn{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: blueviolet;
+    color: white;
+    font-family: Times New Roman;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    background-repeat: no-repeat;
+    font-size: 30px;
+}
+#claimBtn:hover {
+    border-color:#d8b4fe;
+    background-color: #7b2cbf;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8)
+}
+
 
