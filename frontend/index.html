@@ -19,16 +19,52 @@
         <img src="images/dikaprio.jpg">
     </div>
 </div>
-<label for="region-select">  </label>
-<select id="region-select">
-    <option value="BYN"> Беларусь </option>
-</select>
+<div class="selectButtons">
+        <label for="region-select" class="select-label"> Выберите регион </label>
+    <div class="regionsList">
+            <select id="region-select">
+                <option value="nothing"> </option>
+            <option value="RU"> Россия </option>
+            <option value="UK"> Англия </option>
+            </select>
+    </div>
 <button id="claimBtn"> Подтвердить </button>
+</div>
 <p class="offerText"> Что мы предлагаем?</p>
+<p id="resultOfRegion"> тут покажеться результат</p>
 
 
 <script>
+let countries = [
+    {value: "RU", url: "https://steam-tracker-0b4n.onrender.com/api/games?country=ru"},
+    {value: "UK", url: "https://steam-tracker-0b4n.onrender.com/api/games?country=uk"}
+]
+const regionSelect=document.querySelector("#region-select");
+const claimBtn= document.querySelector("#claimBtn")
 
+claimBtn.addEventListener("click", ()=>{
+    const selectedRegion=regionSelect.value;
+    const selectedCountry=countries.find((country)=>{
+        return country.value===selectedRegion
+    })
+    if(!selectedCountry){
+        document.getElementById("resultOfRegion").textContent="Регион не найден";
+        return;
+    }
+   async function returnInfo(){
+        document.getElementById("resultOfRegion").textContent="Загрузка"
+        try{
+            const response= await fetch(selectedCountry.url)
+            const data = await response.json()
+            document.getElementById("resultOfRegion").textContent=data.price
+        }
+       catch(error){
+            document.getElementById("resultOfRegion").textContent=error;
+       }
+   }
+    returnInfo()
+
+})
 
 
 </script>

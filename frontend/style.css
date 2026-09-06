@@ -100,4 +100,31 @@ body {
 .mainButtons button:hover{
     filter: brightness(50%);
 }
+#region-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: blueviolet;
+    color: darkorchid;
+    border-radius: 10px;
+    border: 1.5px solid #c084fc;
+    outline: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%23c084fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    transition: all 0.3s ease-out;
+}
+#region-select:hover{
+    border-color:#d8b4fe;
+    box-shadow: 0 0 10px rgba(192, 132, 252, 0.3);
+}
+#region-select:focus {
+    border-color: #c084fc;
+    box-shadow: 0 0 12px rgba(192, 132, 252, 0.5);
+}
+#region-select option {
+    background-color: #0f0912;
+    color: #ffffff;
+    padding: 10px;
+}
 
