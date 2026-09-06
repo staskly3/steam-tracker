@@ -3,6 +3,7 @@ import time
 import json
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import game_id
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
@@ -11,8 +12,6 @@ app.add_middleware(
     allow_headers=["*"],
 )
 APP_ID = 252490
-input_cur="ru"
-
 def get_regional_prices(appid,cur):
     print(f"Сбор региональных цен для AppID: {appid} ===")
     url = f"https://store.steampowered.com/api/appdetails?appids={appid}&cc={cur}"
