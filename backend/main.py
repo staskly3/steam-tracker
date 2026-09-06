@@ -9,7 +9,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # Разрешить всем
     allow_methods=["*"],
-    allow_headers=["*"], # стас соси яйца волосатые бальшие прям сука уххх
+    allow_headers=["*"],
 )#grigoriy
 APP_ID = 252490
 input_cur="ru"
@@ -31,7 +31,7 @@ def get_regional_prices(appid,cur):
                 "price": game_data.get('price_overview', {}).get('final_formatted'),
                 "currency": game_data.get('price_overview', {}).get('currency'),
                 'discount_percent': game_data.get('price_overview', {}).get('discount_percent'),
-                "about_the_game": game_data.get("about_the_game"),  # Твой плейсхолдер
+                "about_the_game": "info"#game_data.get("about_the_game"),  # Твой плейсхолдер
             }
             # for i in game_info.items():
             #     print(i)
