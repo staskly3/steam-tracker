@@ -4,13 +4,12 @@ import json
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
-# Разрешаем фронтенду обращаться к бэкенду (CORS)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Разрешить всем
+    allow_origins=["*"],
     allow_methods=["*"],
     allow_headers=["*"],
-)#grigoriy
+)
 APP_ID = 252490
 input_cur="ru"
 
@@ -42,5 +41,5 @@ def get_regional_prices(appid,cur):
 
 @app.get("/api/games")
 
-def get_games():
-    return (get_regional_prices(APP_ID,input_cur))
+def get_games(country: str = None):
+    return (get_regional_prices(APP_ID,country))
