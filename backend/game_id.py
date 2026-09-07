@@ -1,7 +1,7 @@
 idies = {
     "Counter-Strike 2": 730,
     "Dota 2": 570,
-    "PUBG: BATTLEGROUNDS": 380970,
+    "PUBG: BATTLEGROUNDS": 578080,
     "Apex Legends": 1172500,
     "Baldur's Gate 3": 1088000,
     "Elden Ring": 1211190,
@@ -50,3 +50,4 @@ idies = {
     "Team Fortress 2": 440,
     "Left 4 Dead 2": 239610
   }
+print(list(idies.values())[0])
