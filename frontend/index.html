@@ -28,7 +28,11 @@
             <option value="UK"> Англия </option>
             </select>
     </div>
-<button id="claimBtn"> Подтвердить </button>
+
+    <button id="claimBtn"> Подтвердить </button>
+        <div class="game-frame" id="gameFrame">
+            <img class="gameImage" src="images/rust.png" alt="rust" />
+        </div>
 </div>
 <p class="offerText"> Что мы предлагаем?</p>
 <p id="resultOfRegion"> тут покажеться результат</p>
@@ -43,6 +47,7 @@ const regionSelect=document.querySelector("#region-select");
 const claimBtn= document.querySelector("#claimBtn")
 
 claimBtn.addEventListener("click", ()=>{
+    gameFrame.classlist.add("show")
     const selectedRegion=regionSelect.value;
     const selectedCountry=countries.find((country)=>{
         return country.value===selectedRegion

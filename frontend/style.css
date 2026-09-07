@@ -17,8 +17,9 @@ body {
     margin-left:100px;
 }
 .ImgToRight img{
+    margin-top: 100px;
     margin-right: 100px;
-    width: 400px;
+    width: 350px;
     height: auto;
     border-radius: 15px;
     display: block;
@@ -35,13 +36,13 @@ body {
     font-size:small;
 }
 .textAndImgStyle .info{
-    font-size: xx-large;
+    font-size: x-large;
 }
 .quote{
-    font-siza:xx-large;
+    font-size:xx-large;
     display: block;
     margin-top: 30px;
-    font-size: 30px;
+    font-size: 20px;
     font-style: italic;
     font-family: Times New Roman;
 }
@@ -118,7 +119,7 @@ body {
     font-size: 30px;
 }
 #region-select:hover{
-    border-color:#d8b4fe;
+    border-color:#ffffff;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8)
 }
 #region-select:focus {
@@ -136,24 +137,38 @@ display: flex;
     gap: 20px
 }
 #claimBtn{
+    text-align: left;
+    left:15px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     background-color: blueviolet;
     color: white;
     font-family: Times New Roman;
-    border: none;
+    border: 1.5px solid #0f0912;
     border-radius: 10px;
-    padding: 10px 24px;
     cursor: pointer;
     transition: all 0.3s ease-out;
     background-repeat: no-repeat;
     font-size: 30px;
+    width: 250px;
+    height: 50px;
+
 }
 #claimBtn:hover {
-    border-color:#d8b4fe;
+    border-color: #ffffff;
     background-color: #7b2cbf;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8)
+}
+.game-frame{
+    display: none;
+    border-radius: 5px;
+    border-color: white;
+    border: 2px;
+    background-color: #7b2cbf;
+    box-shadow:0 0 12px rgba(192, 132, 252, 0.4);
+    width: 100px;
+    height: 120px;
 }
 
 
