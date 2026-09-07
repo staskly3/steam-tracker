@@ -31,12 +31,13 @@
 
     <button id="claimBtn"> Подтвердить </button>
 
-    <div class="gameFrame-gameImage">
+    <div class="result-wrapper" id="result-wrapper">
         <div class="game-frame" id="gameFrame">
             <img class="gameImage" src="images/rust.png" alt="rust" />
-            <div class="gamePriceResult">
-                <p id="resultOfRegion"> тут покажеться результат</p>
-            </div>
+        </div>
+
+        <div class="gamePriceResult">
+            <p id="resultOfRegion"> тут покажется результат</p>
         </div>
     </div>
 </div>
@@ -50,10 +51,10 @@ let countries = [
 ]
 const regionSelect=document.querySelector("#region-select");
 const claimBtn= document.querySelector("#claimBtn")
-const gameFrame=document.querySelector("#gameFrame");
+const gameFrameWrapper=document.querySelector("#result-wrapper");
 
 claimBtn.addEventListener("click", ()=>{
-    gameFrame.classList.add("show")
+    gameFrameWrapper.classList.add("show")
     const selectedRegion=regionSelect.value;
     const selectedCountry=countries.find((country)=>{
         return country.value===selectedRegion
