@@ -30,12 +30,17 @@
     </div>
 
     <button id="claimBtn"> Подтвердить </button>
+
+    <div class="gameFrame-gameImage">
         <div class="game-frame" id="gameFrame">
             <img class="gameImage" src="images/rust.png" alt="rust" />
+            <div class="gamePriceResult">
+                <p id="resultOfRegion"> тут покажеться результат</p>
+            </div>
         </div>
+    </div>
 </div>
-<p class="offerText"> Что мы предлагаем?</p>
-<p id="resultOfRegion"> тут покажеться результат</p>
+
 
 
 <script>
@@ -45,9 +50,10 @@ let countries = [
 ]
 const regionSelect=document.querySelector("#region-select");
 const claimBtn= document.querySelector("#claimBtn")
+const gameFrame=document.querySelector("#gameFrame");
 
 claimBtn.addEventListener("click", ()=>{
-    gameFrame.classlist.add("show")
+    gameFrame.classList.add("show")
     const selectedRegion=regionSelect.value;
     const selectedCountry=countries.find((country)=>{
         return country.value===selectedRegion
@@ -61,7 +67,7 @@ claimBtn.addEventListener("click", ()=>{
         try{
             const response= await fetch(selectedCountry.url)
             const data = await response.json()
-            document.getElementById("resultOfRegion").textContent=data.price
+            document.getElementById("resultOfRegion").textContent="Цена данной игры: " + data.price
         }
        catch(error){
             document.getElementById("resultOfRegion").textContent=error;
