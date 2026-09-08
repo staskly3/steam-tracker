@@ -23,6 +23,7 @@ def get_regional_prices(appid,cur):
         if data and data[str(appid)]['success']:
             x=""
             j=0
+            print(url)
             game_data = data[str(appid)]['data']
             game_info = {
                 "name": game_data.get('name'),
